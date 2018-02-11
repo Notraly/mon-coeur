@@ -25,14 +25,14 @@ void affichageLeds(byte PIN, byte intensite, long t){
 	analogWrite(PIN, 0);
 }
 void leds1(){
-	affichageLeds(PIN_LED1,51,500);
+	affichageLeds(PIN_LED1,30,500);
 	affichageLeds(PIN_LED2,127,750);
-	affichageLeds(PIN_LED3,51,500);
+	affichageLeds(PIN_LED3,30,500);
 }
 void leds2(){
-  analogWrite(PIN_LED1, 51);
+  analogWrite(PIN_LED1, 30);
 	analogWrite(PIN_LED2, 127);
-	analogWrite(PIN_LED3, 51);
+	analogWrite(PIN_LED3, 30);
   delay(500);
 }
 
@@ -60,7 +60,7 @@ void lightUpLeds(){
   Serial.print(val);
   Serial.print("\t");
   Serial.print(typeMethod);
-	if (val > 300 ) {
+	if (val < 300 ) {
 		if (typeMethod == 1) {
       Serial.print("\tif\tif");
       leds1();
